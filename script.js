@@ -1,8 +1,8 @@
 let low = false;
 
 function zoom(e) {
-    console.log(e.wheelDelta)
-	if (!window.gsc) return;
+	if (!window.gsc) 
+		return;
 	window.gsc *= Math.pow(0.9, e.wheelDelta / -120 || e.detail / 2 || 0);
 	window.gsc > 2 ? window.gsc = 2 : window.gsc < 0.1 ? window.gsc = 0.1 : null;
 }
@@ -32,7 +32,7 @@ document.addEventListener("keypress", function(e) {
 document.body.onmousewheel = zoom;
 
 
-$("body").append('<select id="select-srv" style="position:fixed;bottom: 120px; right: 20px; color: lightgray; z-index:99999999;"><option>Selecione um Server</option></select>');
+$("body").append('<select id="select-srv" style="position:fixed;bottom: 120px; right: 20px; z-index:99999999;"><option>Selecione um Server</option></select>');
 
 $("#select-srv").on("change", function (e) {
 	const serverIP = e.target.value.split(":");
@@ -42,6 +42,7 @@ $("#select-srv").on("change", function (e) {
 function getServersList() {
 	if (window.sos && window.sos.length > 0) {
 		var selectSrv = document.getElementById("select-srv");
+		$('#select-srv').empty();
 		for (var i = 0; i < sos.length; i++) {
 			var srv = sos[i];
 			var option = document.createElement("option");

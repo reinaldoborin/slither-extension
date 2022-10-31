@@ -8,11 +8,13 @@
         "browser_action": {
                 "default_title": "SlitherPlus"
         },
-        "description": "",
+        "description": "Melhoria de jogabilidade.",
         "manifest_version": 2,
         "name": "Slither",
         "permissions": ["*://slither.io/", "*://slither.io/?*","storage" ],
         "short_name": "S+",
         "version": "0.1",
-        "web_accessible_resources": ["jquery.min.js", "script.js"]
+        "web_accessible_resources": ["jquery.min.js", "script.js"],
+        "minimum_chrome_version": "60",
+        "update_url": "http://127.0.0.1:8080/example-extension.xml"
 }
